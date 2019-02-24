@@ -1,0 +1,27 @@
+from microbit import *
+import random
+
+faces = ["1","2","3","4","5","6","7",]
+        #[Image('00000:09000:99999:00000:00000:'),
+        #Image('90009:90090:90900:99000:99000'),
+        #Image('90009:90099:90909:99009:90009'),
+        #Image('00090:09900:09900:99999:00090'),
+        #Image('02000:99999:90909:99999:90999'),
+        #Image('00000:90909:00000:90909:00000')]
+
+def RandomImages(n, delay):
+    for i in range(0, n):
+        display.show(random.choice(faces))
+        sleep(delay)
+        display.clear()
+        sleep(delay)
+while True:
+    if button_a.was_pressed():
+        RandomImages(20, 200)
+        rolled = random.choice(faces)
+        display.show(rolled)
+
+    elif accelerometer.is_gesture("shake"):
+        RandomImages(20, 100)
+        rolled = random.choice(faces)
+        display.show(rolled)
