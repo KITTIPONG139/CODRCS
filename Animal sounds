@@ -1,0 +1,91 @@
+package com.example.tong.animalsound;
+
+import android.media.MediaPlayer;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.Toast;
+
+public class AnimalSound extends AppCompatActivity
+            implements View.OnClickListener {
+    private final ImageView imgAnimals[] = new ImageView[9];
+   // private MediaPlayer mplayer;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_animal_sound);
+        imgAnimals[0] = (ImageView) findViewById(R.id.bird);
+        imgAnimals[1] = (ImageView) findViewById(R.id.cat);
+        imgAnimals[2] = (ImageView) findViewById(R.id.cow);
+        imgAnimals[3] = (ImageView) findViewById(R.id.dog);
+        imgAnimals[4] = (ImageView) findViewById(R.id.duck);
+        imgAnimals[5] = (ImageView) findViewById(R.id.elephant);
+        imgAnimals[6] = (ImageView) findViewById(R.id.horse);
+        imgAnimals[7] = (ImageView) findViewById(R.id.pig);
+        imgAnimals[8] = (ImageView) findViewById(R.id.rooster);
+
+        for (int i = 0; i < imgAnimals.length; i++) {
+            imgAnimals[i].setOnClickListener(this);
+        }
+    }
+    @Override
+    public  void  onClick(View v) {
+        switch (v.getId()) {
+            case R.id.bird:
+                Toast.makeText(getApplicationContext(), "bird", Toast.LENGTH_SHORT)
+                        .show();
+                MediaPlayer.create( this,R.raw.bird).start();
+
+                break;
+            case R.id.cat:
+                Toast.makeText(getApplicationContext(), "cat", Toast.LENGTH_SHORT)
+                        .show();
+                MediaPlayer.create( this,R.raw.cat).start();
+                break;
+            case R.id.cow:
+                Toast.makeText(getApplicationContext(), "cow", Toast.LENGTH_SHORT)
+                        .show();
+                MediaPlayer.create( this,R.raw.cow).start();
+                break;
+            case R.id.dog:
+                Toast.makeText(getApplicationContext(), "dog", Toast.LENGTH_SHORT)
+                        .show();
+                MediaPlayer.create( this,R.raw.dog).start();
+                break;
+            case R.id.duck:
+                Toast.makeText(getApplicationContext(), "duck", Toast.LENGTH_SHORT)
+                        .show();
+                MediaPlayer.create( this,R.raw.duck).start();
+                break;
+            case R.id.elephant:
+                Toast.makeText(getApplicationContext(), "elephant", Toast.LENGTH_SHORT)
+                        .show();
+                MediaPlayer.create( this,R.raw.elephant).start();
+                break;
+            case R.id.horse:
+                Toast.makeText(getApplicationContext(), "horse", Toast.LENGTH_SHORT)
+                        .show();
+                MediaPlayer.create( this,R.raw.horse).start();
+                break;
+            case R.id.pig:
+                Toast.makeText(getApplicationContext(), "pig", Toast.LENGTH_SHORT)
+                        .show();
+                MediaPlayer.create( this,R.raw.pig).start();
+                break;
+            case R.id.rooster:
+                Toast.makeText(getApplicationContext(), "rooster", Toast.LENGTH_SHORT)
+                        .show();
+                MediaPlayer.create( this,R.raw.rooster).start();
+                break;
+
+        }
+
+
+        }
+    }
+
+
+
+
