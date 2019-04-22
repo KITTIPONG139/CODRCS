@@ -1,0 +1,45 @@
+package com.example.tong.multiactivity;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.Button;
+import android.widget.EditText;
+
+public class WebActivity extends AppCompatActivity implements View.OnClickListener {
+    WebView webView;
+    Button goButton;
+    EditText urlEditText;
+
+    @Override
+    public void onClick(View v) {
+        urlEditText = findViewById(R.id.urlEditText);
+        String url = urlEditText.getText().toString();
+
+        webView.loadUrl("https://www."+url+".com");
+    }
+        // กาาดึงหน้าเว็บ มาแสดงที่่หน้าจอ
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_web);
+
+        webView = findViewById(R.id.webView);
+        webView.getSettings().setJavaScriptEnabled(true);
+
+        webView.setWebViewClient(new WebViewClient());
+        webView.loadUrl("https://www.google.com/");
+
+        goButton = findViewById(R.id.goButton);
+        goButton.setOnClickListener(this);
+    }
+}
+
+
+
+
+
+
+
